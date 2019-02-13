@@ -15,6 +15,8 @@ module.exports = {
     browser: true
   },
   rules: {
+    quotes: ['error', 'single'],
+    semi: ['error', 'always']
   },
   overrides: [
     // node files
