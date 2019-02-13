@@ -45,7 +45,9 @@ You will need the following things properly installed on your computer.
 My first step when apporaching this task was to analyze the requirements and convert them into a list of consise user stories.
 One hurdle I faced while doing this was with the wording for **popular** venues. After scanning through the API docs for the foursquare venues API, the only match I could see for popular was **trending** venues. I'd usually raise this as a question to the product owner but in this case I decided to go ahead with using this API.
 
-Next was picking the technology. I decided on Ember, as it's a framework I'm comfortable in meaning I could focus more on implementation rather than wrestling with learning something new.
+Next was picking the technology. I decided on Ember, as it's a framework I'm comfortable in meaning I could focus more on implementation rather than wrestling with learning something new. I opted for bootstrap as a CSS framework as it's easy to use to quickly flesh out a small app such as this.
+
+Once I'd finished the user stories and picked the technology, I started work on the first user story. I wrote some tests to cover the user story and made a decision that this feature would simply cover the displaying of a search input and button, as I felt the next user story better encompased the actual process of searching.
 
 ### User Stories
 ```
