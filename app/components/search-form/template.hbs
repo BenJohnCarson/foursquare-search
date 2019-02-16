@@ -1,14 +1,23 @@
+{{#if errorMessage}}
+  <p class="text-danger text-center" data-test-error-message>{{errorMessage}}</p>
+{{/if}}
 <form class="row justify-content-center align-items-center">
   <div class="col-auto">
     {{input
       data-test-search-input
+      value=near
       autofocus="autofocus" 
       placeholder="Enter a location"
     }}
   </div>
-  <div class="col-auto">
-    <button class="btn btn-primary" type="submit" data-test-search-button>
-      Show me the venues!
+  <div class="col-sm-12 col-lg-3 col-md-4 mt-3 mt-md-0">
+    <button class="btn btn-primary w-100" type="submit" {{action (perform searchVenues near)}}
+      disabled={{shouldDisableSearchButton}} data-test-search-button>
+      {{#if searchVenues.isRunning}}
+        Searching...
+      {{else}}
+        Show me the venues!
+      {{/if}}
     </button>
   </div>
 </form>
