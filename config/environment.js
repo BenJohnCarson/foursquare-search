@@ -20,9 +20,17 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    FOURSQUARE: {
+      CLIENT_ID: process.env.FOURSQUARE_CLIENT_ID,
+      CLIENT_SECRET: process.env.FOURSQUARE_CLIENT_SECRET,
+      VERSION: '20180323',
+      HOST: 'https://api.foursquare.com',
+      NAMESPACE: 'v2'
     }
   };
-
+    
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
