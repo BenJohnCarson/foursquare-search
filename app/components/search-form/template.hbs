@@ -11,6 +11,18 @@
     }}
   </div>
   <div class="col-sm-12 col-lg-3 col-md-4 mt-3 mt-md-0">
+    {{#power-select
+      options=searchTypes
+      selected=selectedType
+      searchEnabled=false
+      disabled=searchVenues.isRunning
+      onchange=(action (mut selectedType))
+      as |type|
+    }}
+      {{type.displayValue}}
+    {{/power-select}}
+  </div>
+  <div class="col-sm-12 col-lg-3 col-md-4 mt-3 mt-md-0">
     <button class="btn btn-primary w-100" type="submit" {{action (perform searchVenues near)}}
       disabled={{shouldDisableSearchButton}} data-test-search-button>
       {{#if searchVenues.isRunning}}
