@@ -30,7 +30,7 @@ module('Unit | Controller | application', function (hooks) {
       fetch: fetch,
       api: api
     });
-    controller.fetchVenues.perform(searchTerm);
+    controller.fetchVenues.perform(searchTerm, 'trending');
 
     assert.ok(fetch.calledWith(expectedURL), 'URL passed to fetchVenues is correct');
     assert.deepEqual(controller.venues, results.response.venues, 'Venues from fetch call set on model');
@@ -51,7 +51,7 @@ module('Unit | Controller | application', function (hooks) {
     });
 
     try {
-      controller.fetchVenues.perform('London');
+      controller.fetchVenues.perform('London', 'trending');
     } catch (error) {
       assert.equal(error, results.meta.errorDetail, 'Correct error thrown on non 200 status');
     }
@@ -73,7 +73,7 @@ module('Unit | Controller | application', function (hooks) {
     });
 
     try {
-      controller.fetchVenues.perform(searchTerm);
+      controller.fetchVenues.perform(searchTerm, 'trending');
     } catch (error) {
       assert.equal(error, `${controller.noVenuesFoundMessage} ${searchTerm}`, 'Correct error thrown on non 200 status');
     }
