@@ -1,6 +1,16 @@
-<div class="container">
-  <h1 class="text-center my-5">
+<div class="container text-center">
+  <h1 class="my-5">
     Foursquare Search
   </h1>
   {{search-form fetchVenues=(perform fetchVenues)}}
+  <hr class="my-5">
+  {{#if venues.length}}
+    {{venue-list venues=venues}}
+  {{else}}
+    {{#if fetchVenues.isRunning}}
+      Searching for venues...
+    {{else}}
+      Your venues will appear here...
+    {{/if}}
+  {{/if}}
 </div>
